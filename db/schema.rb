@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(version: 2019_08_07_043748) do
   create_table "products", force: :cascade do |t|
     t.string "asin", null: false
     t.text "category"
+    t.string "dimensions"
     t.integer "rank"
-    t.decimal "width"
-    t.decimal "height"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
