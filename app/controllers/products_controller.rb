@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
 
       @product = Product.create({
         :asin => asin,
+        :name => new_product.name,
         :category => new_product.category,
         :rank => new_product.rank,
         :dimensions => new_product.dimensions
