@@ -57,6 +57,3 @@ From here you can look at the product on Amazon, or click on "Back to all produc
 
 Enjoy!
 
-
-## To do's
-- [ ] Add tests
