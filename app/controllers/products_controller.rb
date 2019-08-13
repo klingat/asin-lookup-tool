@@ -1,10 +1,13 @@
 class ProductsController < ApplicationController
+
   def index
     @products = Product.all
   end
 
   def show
     @product = Product.find_by_asin(params[:asin])
+
+    redirect_to new_product_path unless @product
   end
 
   def new
@@ -12,25 +15,29 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @product = Product.create(product_params)
+    asin = product_params[:asin]
 
-    if @product.save
-      redirect_to @product
+    if Product.where(:asin => asin).empty?
+      new_product = Services::GetProductDetailsFromAsin.new({asin: asin})
+
+      @product = Product.create({
+        :asin => asin,
+        :category => new_product.category,
+        :rank => new_product.rank,
+        :dimensions => new_product.dimensions
+      })
+
+      redirect_to product_path(asin)
     else
-      redirect_to :new
+      redirect_to product_path(asin)
     end
-
   end
 
   private
   
   def product_params
     params.require(:product).permit(
-      :asin,
-      :category,
-      :rank,
-      :dimensions
+      :asin
     )
   end
 end
