@@ -35,7 +35,7 @@ class Services::GetProductDetailsFromAsin
       end
     end
 
-    extracted_text.split("(").first.split(" ")
+    extracted_text.split("(").first.split(" ") unless extracted_text.empty?
   end
 
   def product_details_hash
