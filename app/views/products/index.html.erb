@@ -1,7 +1,14 @@
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.asin, product_path(product.asin) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <%= link_to("Add new product", new_product_path, class: "button") %>
 
-<%= link_to("Add new product", new_product_path) %>
+  <h1>Your saved products</h1>
+  <div class="product-list">
+    <% @products.each do |product| %>
+      <div class="product-item">
+        <a href="<%= product_path(product.asin) %>">
+          <h3><%= product.asin %> <small>(<%= product.name %>)</small></h3>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>  

@@ -1,6 +1,16 @@
-<h3>Add product</h3>
-<%= form_with model: @product do |form| %>
-  <%= form.text_field :asin, placeholder: "ASIN" %>
 
-  <%= form.submit %>
-<% end %>
+<div class="container">
+  <div class="row col-12">
+    <h3>Add new product</h3>
+    <small>Please enter the 10 digit ASIN code. <a href="https://www.nchannel.com/blog/amazon-asin-what-is-an-asin-number/" target="_blank">Click here</a> for more information on what an ASIN is and how to find it.</small>
+    <%= form_with model: @product do |form| %>
+      <%= form.text_field :asin, placeholder: "ASIN" %>
+
+      <%= form.submit "Add", class: "button" %>
+    <% end %>
+
+    <div class="navigation">
+      <%= link_to("← Back to all products", products_path, class: "button") %>
+    </div>
+  </div>
+</div>

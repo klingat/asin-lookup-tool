@@ -13,3 +13,98 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+body {
+  background-color: royalblue;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  padding: 4rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.logo {
+  width: 18rem;
+}
+
+hr {
+  border-color: #fd9827;
+}
+
+a {
+  color: white;
+}
+
+.product-item {
+  border-top: 1px solid;
+  border-color: #fd9827;
+  padding: 0.5rem 0;
+}
+
+.product-item a {
+  text-decoration: none;
+}
+
+.product-item a:hover {
+  color:#fd9827;
+}
+
+.button {
+  padding: 0.8rem 1.2rem;
+  margin: 1rem 0.5rem 1rem 0;
+  background-color: #fff;
+  text-decoration: none;
+  color: royalblue;
+  font-weight: 700;
+  border-radius: 0.3rem;
+}
+
+.button:hover {
+  color: #fd9827;
+}
+
+.button-amazon {
+  background-color: #fd9827;
+  color: #000;
+}
+
+.button-amazon:hover {
+  color: white;
+}
+
+input {
+  font-family : inherit;
+  font-size   : 100%;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.3rem;
+  background: none;
+  color: #fff;
+  border: 1px solid white;
+  margin-right: 0.5rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 0.5; /* Firefox */
+}
+
+.navigation {
+  margin-top: 2rem;
+}
+
+ul {
+  line-height: 1.7;
+}
+
+small {
+  font-weight: 400;
+}
