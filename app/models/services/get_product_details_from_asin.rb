@@ -27,15 +27,28 @@ class Services::GetProductDetailsFromAsin
   private
   
   def rank_and_category # because they are in the same cell, "Best Sellers Rank"
-    product_details_hash["Best Sellers Rank"].split("(").first.split(" ") if product_details_hash["Best Sellers Rank"]
+    extracted_text = ""
+
+    product_details_hash.each do |k, v| 
+      if k.include? "Best Sellers Rank"
+        extracted_text = v
+      end
+    end
+
+    extracted_text.split("(").first.split(" ")
   end
 
   def product_details_hash
     details = {}
 
     doc.css('#prodDetails table tr').each do |el|
-      key = el.css('th').text.strip
-      value = el.css('td').text.strip
+      if el.css('th').empty?
+        key = el.css('td').first.text.strip
+        value = el.css('td').last.text.strip
+      else
+        key = el.css('th').text.strip
+        value = el.css('td').text.strip
+      end
 
       details[key] = value
     end
