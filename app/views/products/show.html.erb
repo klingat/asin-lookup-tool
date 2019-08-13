@@ -1,4 +1,7 @@
-<h5><%= @product.asin %></h5>
-<p>Category: <%= @product.category %></p>
-<p>Rank: <%= @product.rank %></p>
-<p>Dimensions: <%= @product.dimensions %></p>
+<h1><%= @product.asin %></h1>
+<h3><%= @product.name %></h3>
+<p>Category: <%= @product.category.blank? ? "N/A" : @product.category %></p>
+<p>Rank: <%= @product.rank.blank? ? "N/A" : @product.rank %></p>
+<p>Dimensions: <%= @product.dimensions.blank? ? "N/A" : @product.dimensions %></p>
+
+<%= link_to("View on Amazon", "https://www.amazon.com/dp/#{@product.asin}", target: "_blank") %>
