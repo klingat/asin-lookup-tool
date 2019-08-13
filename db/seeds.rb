@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 products = Product.create([
-  { asin: "B0013BKDO8", category: "Tools & Home Improvement", rank: 92, dimensions: "1.3 x 2.5 x 3 inches" },
-  { asin: "B07L6VQDSC", category: "Toys & Games", rank: 30, dimensions: "1.3 x 2.5 x 3 inches" },
-  { asin: "B002QYW8LW", category: "Baby", rank: 36, dimensions: "1.3 x 2.5 x 3 inches" }
+  { asin: "B0013BKDO8", name: 'AcuRite 00613 Indoor Thermometer & Hygrometer with Humidity Gauge, 3" H x 2.5" W x 1.3" D', category: "Tools & Home Improvement", rank: 92, dimensions: "1.3 x 2.5 x 3 inches" },
+  { asin: "B07L6VQDSC", name: "Crayola Jumbo Crayons, Assorted Colors, Great Toddler Crayons, 16Count", category: "Toys & Games", rank: 30, dimensions: "1.3 x 2.5 x 3 inches" },
+  { asin: "B002QYW8LW", name: "Baby Banana Infant Training Toothbrush and Teether", category: "Baby", rank: 36, dimensions: "1.3 x 2.5 x 3 inches" }
 ])
