@@ -4,10 +4,9 @@
 
 ### A tool to lookup and save Amazon product's via their ASIN code.
 
-Please note that this app is a WORK IN PROGRESS.
+Given an [ASIN](https://www.nchannel.com/blog/amazon-asin-what-is-an-asin-number/), this app can return the product name, category, rank, and dimensions and save the data for you for future reference.  
 
-Given an [ASIN](https://www.nchannel.com/blog/amazon-asin-what-is-an-asin-number/), this app can return the product name, category, rank, and dimensions and save the data for you for future reference. 
-
+Please note that this app is a **work in progress**. More details below.
 
 ## Prerequisites
 * Ruby version
@@ -63,3 +62,25 @@ From here you can look at the product on Amazon, or click on "Back to all produc
 
 Enjoy!
 
+# WIP
+Please note that this app is a **work in progress**.
+
+Amazon has many different layouts for product pages. Especially when it comes to the Product Details section. Some pages have it set up as a table, some are an unordered list, some are tables but with different columns, etc.
+
+Because this app uses web scraping, there are instances that are not covered and no data will be fetched because the scraper is not scraping the correct element. In that case, an empty string will be displayed for now. The next thing to be added to this app is tests! The tests will need to have a case for each type of product page that Amazon has. The tests will siginificantly improve the robustness of the web scraping.
+
+The #1 solution to this is to use the Amazon Product API, however the goal of this app was NOT to use the Amazon API.
+
+
+Examples of Amazon products that fully work with this app:
+https://www.amazon.com/dp/B002QYW8LW
+https://www.amazon.com/dp/B018MWQBVY
+https://www.amazon.com/dp/B07PLHCRNC
+https://www.amazon.com/dp/B0013BKDO8
+https://www.amazon.com/dp/B004L6MPFC
+
+
+Examples of Amazon products that DO NOT fully work with this app:
+(Note: The name of the product will still be scraped, but dimensions, category, and rank will not, due to different product detail layouts. An empty string will be displayed for missing data.)
+https://www.amazon.com/dp/B00D89VK3Q
+https://www.amazon.com/dp/B07PGZNM34
