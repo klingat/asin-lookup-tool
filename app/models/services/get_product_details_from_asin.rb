@@ -15,17 +15,26 @@ class Services::GetProductDetailsFromAsin
   end
   
   def dimensions
-    product_details_row(0).css('td').text.strip
+    details["Product Dimensions"]
   end
   
   private
   
-  def rank_and_category # because they are in the same cell
-    product_details_row(8).css('td span')[1].text.strip.split("(").first.split(" ")
+  def rank_and_category # because they are in the same cell, "Best Sellers Rank"
+    details["Best Sellers Rank"].split("(").first.split(" ")
   end
 
-  def product_details_row(row)
-    doc.css('#prodDetails table tr')[row]
+  def product_details_hash
+    details = {}
+
+    doc.css('#prodDetails table tr').each do |el|
+      key = el.css('th').text.strip
+      value = el.css('td').text.strip
+
+      details[key] = value
+    end
+
+    details
   end
 
   def parsed_doc
