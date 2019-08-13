@@ -15,13 +15,13 @@ class Services::GetProductDetailsFromAsin
   end
   
   def dimensions
-    details["Product Dimensions"]
+    product_details_hash["Product Dimensions"]
   end
   
   private
   
   def rank_and_category # because they are in the same cell, "Best Sellers Rank"
-    details["Best Sellers Rank"].split("(").first.split(" ")
+    product_details_hash["Best Sellers Rank"].split("(").first.split(" ")
   end
 
   def product_details_hash
