@@ -11,10 +11,12 @@ class Services::GetProductDetailsFromAsin
   end
 
   def rank
+    return "" if rank_and_category.nil?
     rank_and_category.first[1..-1]
   end
 
   def category
+    return "" if rank_and_category.nil?
     rank_and_category.drop(2).join(" ")
   end
   
@@ -25,7 +27,7 @@ class Services::GetProductDetailsFromAsin
   private
   
   def rank_and_category # because they are in the same cell, "Best Sellers Rank"
-    product_details_hash["Best Sellers Rank"].split("(").first.split(" ")
+    product_details_hash["Best Sellers Rank"].split("(").first.split(" ") if product_details_hash["Best Sellers Rank"]
   end
 
   def product_details_hash
