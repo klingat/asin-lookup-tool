@@ -73,14 +73,14 @@ The #1 solution to this is to use the Amazon Product API, however the goal of th
 
 
 Examples of Amazon products that fully work with this app:
-https://www.amazon.com/dp/B002QYW8LW
-https://www.amazon.com/dp/B018MWQBVY
-https://www.amazon.com/dp/B07PLHCRNC
-https://www.amazon.com/dp/B0013BKDO8
-https://www.amazon.com/dp/B004L6MPFC
+* https://www.amazon.com/dp/B002QYW8LW
+* https://www.amazon.com/dp/B018MWQBVY
+* https://www.amazon.com/dp/B07PLHCRNC
+* https://www.amazon.com/dp/B0013BKDO8
+* https://www.amazon.com/dp/B004L6MPFC
 
 
 Examples of Amazon products that DO NOT fully work with this app:
 (Note: The name of the product will still be scraped, but dimensions, category, and rank will not, due to different product detail layouts. An empty string will be displayed for missing data.)
-https://www.amazon.com/dp/B00D89VK3Q
-https://www.amazon.com/dp/B07PGZNM34
+* https://www.amazon.com/dp/B00D89VK3Q
+* https://www.amazon.com/dp/B07PGZNM34
