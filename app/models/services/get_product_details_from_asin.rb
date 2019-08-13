@@ -15,7 +15,7 @@ class Services::GetProductDetailsFromAsin
   end
   
   def dimensions
-    product_details_hash["Product Dimensions"]
+    product_details_hash["Product Dimensions"] || product_details_hash["Package Dimensions"]
   end
   
   private
