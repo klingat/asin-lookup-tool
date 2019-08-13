@@ -6,6 +6,10 @@ class Services::GetProductDetailsFromAsin
     @doc = parsed_doc
   end
 
+  def name
+    product_name
+  end
+
   def rank
     rank_and_category.first[1..-1]
   end
@@ -35,6 +39,10 @@ class Services::GetProductDetailsFromAsin
     end
 
     details
+  end
+
+  def product_name
+    doc.css('#productTitle').text
   end
 
   def parsed_doc
