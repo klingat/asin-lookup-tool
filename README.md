@@ -6,6 +6,8 @@
 
 Given an [ASIN](https://www.nchannel.com/blog/amazon-asin-what-is-an-asin-number/), this app can return the product name, category, rank, and dimensions and save the data for you for future reference.  
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#/https://github.com/klingat/asin-lookup-tool)
+
 Please note that this app is a **work in progress**. More details below.
 
 ## Prerequisites
